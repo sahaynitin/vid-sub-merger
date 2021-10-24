@@ -33,7 +33,7 @@ Note :Please note that only english type fonts are supported in hardmux other sc
 """
 
   START_TEXT = """
-**Hey** {user_mention},
+**Hey** {user_mention}
 
 Welcome to **{bot_name}**\n
 I Can help you to Merge Subtitle in Video\n
