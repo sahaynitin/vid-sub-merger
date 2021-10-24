@@ -89,7 +89,7 @@ async def save_doc(bot, message, cb=False):
             text = 'Video file downloaded successfully.\nChoose your desired muxing.\n[ /softmux , /hardmux ]'
         else :
             text = 'Video file downloaded successfully.\nNow send Subtitle file!'
-        await client.edit_message_text(
+        await bot.edit_message_text(
             text = text,
             chat_id = chat_id,
             message_id = downloading.message_id
@@ -205,7 +205,7 @@ async def save_url(bot, message, cb=False):
             save_filename = url.split('/')[-1]
             save_filename = unquote(save_filename)
 
-    sent_msg = await client.send_message(chat_id, 'Preparing Your Download')
+    sent_msg = await bot.send_message(chat_id, 'Preparing Your Download')
     ext = save_filename.split('.')[-1]
     if ext not in ['mp4','mkv'] :
         return await sent_msg.edit(Chat.UNSUPPORTED_FORMAT.format(ext))
