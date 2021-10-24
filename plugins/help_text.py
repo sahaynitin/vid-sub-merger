@@ -16,9 +16,9 @@ logging.getLogger('pyrogram').setLevel(logging.WARNING)
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.forcesub import handle_force_subscribe
 from script import Script
+from pyrogram.errors import FloodWait, UserNotParticipant
 
-
-@Client.on_message(filters.command("help"))
+@pyrogram.Client.on_message(pyrogram.filters.command("help"))
 async def help(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
@@ -48,7 +48,7 @@ async def help(bot, message, cb=False):
         )
 
 
-@Client.on_message(filters.command("start"))
+@pyrogram.Client.on_message(pyrogram.filters.command("start"))
 async def start(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
@@ -80,7 +80,7 @@ async def start(bot, message, cb=False):
         ) 
 
 
-@Client.on_message(filters.command("about") & filters.private & filters.incoming)
+@pyrogram.Client.on_message(pyrogram.filters.command("about"))
 async def about(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
