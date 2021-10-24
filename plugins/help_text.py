@@ -16,17 +16,6 @@ from about import About
 from config import Config
 logging.getLogger('pyrogram').setLevel(logging.WARNING)
 
-# (c) Asm Safone
-# A Part of MegaDL-Bot <https://github.com/AsmSafone/MegaDL-Bot>
-
-import os
-import math
-import time
-import shutil
-import asyncio
-import logging
-from pyrogram import Client, filters
-from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.forcesub import handle_force_subscribe
 from config import Config, TEXT
