@@ -7,7 +7,7 @@ from pyrogram import Client, filters
 from script import Script
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from megadl.forcesub import handle_force_subscribe
+from plugins.forcesub import handle_force_subscribe
 from config import Config
 @Client.on_message(filters.command("help") & filters.private & filters.incoming)
 async def help(bot, message, cb=False):
