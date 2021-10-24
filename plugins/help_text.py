@@ -62,7 +62,7 @@ async def start(bot, message, cb=False):
         InlineKeyboardButton(f'👲 About', callback_data="about")
         ],[
         InlineKeyboardButton(f'🥰 Source', url='https://github.com/Tellybots/vid-sub-merger'),
-        InlineKeyboardButton(f'⛔ CloseHOME'llback_data="close")
+        InlineKeyboardButton(f'⛔ Close', callback_data="close")
         ]]
     reply_markup = InlineKeyboardMarkup(button)
     if cb:
