@@ -9,7 +9,7 @@ import os
 db = Db()
 
 @Client.on_message(filters.command('softmux') & filters.private)
-async def softmux():
+async def softmux(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
@@ -26,11 +26,11 @@ async def softmux():
         text += 'Send a Subtitle File!'
 
     if not (og_sub_filename and og_vid_filename) :
-        await client.send_message(chat_id, text)
+        await bot.send_message(chat_id, text)
         return
 
     text = 'Your File is Being Soft Subbed. This should be done in few seconds!'
-    sent_msg = await client.send_message(chat_id, text)
+    sent_msg = await bot.send_message(chat_id, text)
 
     softmux_filename = await softmux_vid(og_vid_filename, og_sub_filename, sent_msg)
     if not softmux_filename:
@@ -41,7 +41,7 @@ async def softmux():
 
     start_time = time.time()
     try:
-        await client.send_document(
+        await bot.send_document(
                 chat_id, 
                 progress = progress_bar, 
                 progress_args = (
@@ -56,7 +56,7 @@ async def softmux():
         await sent_msg.edit(text)
     except Exception as e:
         print(e)
-        await client.send_message(chat_id, 'An error occured while uploading the file!\nCheck logs for details of the error!')
+        await bot.send_message(chat_id, 'An error occured while uploading the file!\nCheck logs for details of the error!')
 
     path = Config.DOWNLOAD_DIR+'/'
     os.remove(path+og_sub_filename)
