@@ -110,31 +110,31 @@ async def about(bot, message, cb=False):
         )
 
 
-@Client.on_callback_query(filters.regex('^help$'))
+@pyrogram.Client.on_callback_query(pyrogram.filters.regex('^help$'))
 async def help_cb(bot, message):
     await message.answer()
     await help(bot, message, True)
 
 
-@Client.on_callback_query(filters.regex('^close$'))
+@pyrogram.Client.on_callback_query(pyrogram.filters.regex('^close$'))
 async def close_cb(bot, message):
     await message.message.delete()
     await message.message.reply_to_message.delete()
 
 
-@Client.on_callback_query(filters.regex('^back$'))
+@pyrogram.Client.on_callback_query(pyrogram.filters.regex('^back$'))
 async def back_cb(bot, message):
     await message.answer()
     await start(bot, message, True)
 
 
-@Client.on_callback_query(filters.regex('^about$'))
+@pyrogram.Client.on_callback_query(pyrogram.filters.regex('^about$'))
 async def about_cb(bot, message):
     await message.answer()
     await about(bot, message, True)
 
 
-@Client.on_callback_query(filters.regex('^refreshmeh$'))
+@pyrogram.Client.on_callback_query(pyrogram.filters.regex('^refreshmeh$'))
 async def refreshmeh_cb(bot, message):
     if Config.UPDATES_CHANNEL:
         invite_link = await bot.create_chat_invite_link(int(Config.UPDATES_CHANNEL))
