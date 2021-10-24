@@ -16,9 +16,18 @@ class Script:
 """
 
   HELP_USER = """
-This is **{bot_name}**
+I am **{bot_name}**
 
-This Bot Can Download Files & Videos From Mega Links & Upload To Telegram. Just Send Any Mega.nz Link & See The Magic. You Can Also Add or Change Caption: Just Select An Uploaded File/ Video or Forward Me Any Telegram File & Then Write The Text You Want To Be Caption On The File As A Reply To That File & The Text You Wrote Will Be Attached As Caption 😁! 
+Welcome to the Help Menu
+
+1.) Send a Video file or url.
+2.) Send a subtitle file (ass or srt)
+3.) Choose you desired type of muxing!
+
+To give custom name to file send it with url seperated with |
+url|custom_name.mp4
+
+Note :Please note that only english type fonts are supported in hardmux other scripts will be shown as empty blocks on the video! 
 
 **Made With 💕 By @Tellybots_4u**
 """
@@ -26,8 +35,8 @@ This Bot Can Download Files & Videos From Mega Links & Upload To Telegram. Just 
   START_TEXT = """
 👋🏻 **Hi** {user_mention},
 
-I'm **{bot_name}**
-I Can Download Files & Videos From Mega.nz Links & Upload To Telegram. Please Check Help To Learn More 😉!
+I am **{bot_name}**\n
+I Can help you to Merge Subtitle in Video\n
 
-**Maintained By: {bot_owner}**❤️!
+**Made With 💕 By @Tellybots_4u!
 """
