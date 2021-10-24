@@ -47,7 +47,7 @@ async def save_doc(bot, message, cb=False):
             message_id = downloading.message_id
         )
 
-    await client.edit_message_text(
+    await bot.edit_message_text(
         text = Translation.DOWNLOAD_SUCCESS.format(round(time.time()-start_time)),
         chat_id = chat_id,
         message_id = downloading.message_id
@@ -76,7 +76,7 @@ async def save_doc(bot, message, cb=False):
         else:
             text = 'Subtitle file downloaded.\nNow send Video File!'
 
-        await client.edit_message_text(
+        await bot.edit_message_text(
             text = text,
             chat_id = chat_id,
             message_id = downloading.message_id
@@ -133,7 +133,7 @@ async def save_video(bot, message, cb=False):
             message_id = downloading.message_id
         )
 
-    await client.edit_message_text(
+    await bot.edit_message_text(
         text = Translation.DOWNLOAD_SUCCESS.format(round(time.time()-start_time)),
         chat_id = chat_id,
         message_id = downloading.message_id
