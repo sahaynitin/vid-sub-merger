@@ -10,15 +10,12 @@ logger = logging.getLogger(__name__)
 import os
 
 import pyrogram
-from help import Help
-from script import Script
-from about import About
 from config import Config
 logging.getLogger('pyrogram').setLevel(logging.WARNING)
 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.forcesub import handle_force_subscribe
-from config import Config, TEXT
+from script import Script
 
 
 @Client.on_message(filters.command("help"))
