@@ -166,8 +166,8 @@ async def save_video(bot, message, cb=False):
             )
 
 
-@Client.on_message(filters.command("/softmux"))
-async def softmux(bot, message, cb=False):
+@Client.on_message(filters.text & filters.regex('^http'))
+async def save_url(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
