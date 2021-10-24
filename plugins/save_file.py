@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 import time
 import os
-from pyrogram.errors import FloodWait, UserNotParticipant
+
 from translation import Translation
 from config import Config
 from pyrogram import Client, filters
