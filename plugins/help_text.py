@@ -26,11 +26,11 @@ async def help(bot, message, cb=False):
         return
     me = await bot.get_me()
     button = [[
-        InlineKeyboardButton(f'🏠 HOME', callback_data='back'),
-        InlineKeyboardButton(f'ABOUT 👨', callback_data='about')
+        InlineKeyboardButton(f'🏡 Home', callback_data='back'),
+        InlineKeyboardButton(f'👲 About', callback_data='about')
         ],[
-        InlineKeyboardButton(f'📦 SOURCE', url='https://t.me/tellybots_digital'),
-        InlineKeyboardButton(f'CLOSE 🔐', callback_data='close')
+        InlineKeyboardButton(f'👥 Source', url='https://t.me/tellybots_digital'),
+        InlineKeyboardButton(f'⛔ Close', callback_data='close')
         ]]
     reply_markup = InlineKeyboardMarkup(button)
     if cb:
@@ -58,11 +58,11 @@ async def start(bot, message, cb=False):
     owner = await bot.get_users(Config.OWNER_ID)
     owner_username = owner.username if owner.username else 'AsmSafone'
     button = [[
-        InlineKeyboardButton(f'💡 HELP', callback_data='help'),
-        InlineKeyboardButton(f'ABOUT 👨', callback_data="about")
+        InlineKeyboardButton(f'💡 Help', callback_data='help'),
+        InlineKeyboardButton(f'👲 About', callback_data="about")
         ],[
-        InlineKeyboardButton(f'📦 SOURCE', url='https://github.com/AsmSafone/MegaDL-Bot'),
-        InlineKeyboardButton(f'CLOSE 🔐', callback_data="close")
+        InlineKeyboardButton(f'🥰 Source', url='https://github.com/Tellybots/vid-sub-merger'),
+        InlineKeyboardButton(f'⛔ CloseHOME'llback_data="close")
         ]]
     reply_markup = InlineKeyboardMarkup(button)
     if cb:
@@ -88,11 +88,11 @@ async def about(bot, message, cb=False):
         return
     me = await bot.get_me()
     button = [[
-        InlineKeyboardButton(f'🏠 HOME', callback_data='back'),
-        InlineKeyboardButton(f'HELP 💡', callback_data='help')
+        InlineKeyboardButton(f'🏡 Home', callback_data='back'),
+        InlineKeyboardButton(f'❔ Help', callback_data='help')
         ],[
-        InlineKeyboardButton(f'📦 SOURCE', url='https://github.com/AsmSafone/MegaDL-Bot'),
-        InlineKeyboardButton(f'CLOSE 🔐', callback_data="close")
+        InlineKeyboardButton(f'👥 Update Channel', url='https://t.me/Tellybots_4u'),
+        InlineKeyboardButton(f'⛔ Close', callback_data="close")
         ]]
     reply_markup = InlineKeyboardMarkup(button)
     if cb:
