@@ -105,7 +105,7 @@ async def save_doc(bot, message, cb=False):
         os.remove(Config.DOWNLOAD_DIR+'/'+tg_filename)
 
 @Client.on_message(filters.video & filters.private)
-async def save_doc(bot, message, cb=False):
+async def save_video(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
