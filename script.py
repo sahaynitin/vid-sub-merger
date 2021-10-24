@@ -37,6 +37,5 @@ Note :Please note that only english type fonts are supported in hardmux other sc
 
 Welcome to **{bot_name}**\n
 I Can help you to Merge Subtitle in Video\n
-
 **Made With 💕 By @Tellybots_4u
 """
