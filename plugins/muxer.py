@@ -4,7 +4,6 @@ from helper_func.dbhelper import Database as Db
 from helper_func.mux import softmux_vid, hardmux_vid
 from config import Config
 from plugins.forcesub import handle_force_subscribe
-from pyrogram.errors import FloodWait, UserNotParticipant
 import time
 import os
 db = Db()
