@@ -28,8 +28,8 @@ async def save_doc(bot, message, cb=False):
     me = await bot.get_me()
     chat_id = message.from_user.id
     start_time = time.time()
-    downloading = await client.send_message(chat_id, 'Downloading your File!')
-    download_location = await client.download_media(
+    downloading = await bot.send_message(chat_id, 'Downloading your File!')
+    download_location = await bot.download_media(
         message = message,
         file_name = Config.DOWNLOAD_DIR+'/',
         progress = progress_bar,
@@ -41,7 +41,7 @@ async def save_doc(bot, message, cb=False):
     )
 
     if download_location is None:
-        return client.edit_message_text(
+        return bot.edit_message_text(
             text = 'Downloading Failed!',
             chat_id = chat_id,
             message_id = downloading.message_id
@@ -97,7 +97,7 @@ async def save_doc(bot, message, cb=False):
 
     else:
         text = Translation.UNSUPPORTED_FORMAT.format(ext)+f'\nFile = {tg_filename}'
-        await client.edit_message_text(
+        await bot.edit_message_text(
             text = text,
             chat_id = chat_id,
             message_id = downloading.message_id
@@ -114,8 +114,8 @@ async def save_video(bot, message, cb=False):
 
     chat_id = message.from_user.id
     start_time = time.time()
-    downloading = await client.send_message(chat_id, 'Downloading your File!')
-    download_location = await client.download_media(
+    downloading = await bot.send_message(chat_id, 'Downloading your File!')
+    download_location = await bot.download_media(
         message = message,
         file_name = Config.DOWNLOAD_DIR+'/',
         progress = progress_bar,
@@ -127,7 +127,7 @@ async def save_video(bot, message, cb=False):
         )
 
     if download_location is None:
-        return client.edit_message_text(
+        return bot.edit_message_text(
             text = 'Downloading Failed!',
             chat_id = chat_id,
             message_id = downloading.message_id
@@ -159,7 +159,7 @@ async def save_video(bot, message, cb=False):
         text = 'Video file downloaded successfully.\nChoose your desired muxing.\n[ /softmux , /hardmux ]'
     else :
         text = 'Video file downloaded successfully.\nNow send Subtitle file!'
-    await client.edit_message_text(
+    await bot.edit_message_text(
             text = text,
             chat_id = chat_id,
             message_id = downloading.message_id
