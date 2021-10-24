@@ -39,7 +39,7 @@ async def help(bot, message, cb=False):
         )
 
 
-@Client.on_message(pyrogram.filters.command("start") & filters.private & filters.incoming)
+@Client.on_message(filters.command("start") & filters.private & filters.incoming)
 async def start(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
