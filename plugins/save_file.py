@@ -19,12 +19,13 @@ import requests
 from urllib.parse import quote, unquote
 db = Db()
 
-@Client.on_message(filters.document & filters.private)
-async def save_doc(client, message):
-if Config.UPDATES_CHANNEL:
+@Client.on_message(filters.command("/softmux"))
+async def softmux(bot, message, cb=False):
+    if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
         return
+    me = await bot.get_me()
     chat_id = message.from_user.id
     start_time = time.time()
     downloading = await client.send_message(chat_id, 'Downloading your File!')
@@ -103,13 +104,14 @@ if Config.UPDATES_CHANNEL:
         )
         os.remove(Config.DOWNLOAD_DIR+'/'+tg_filename)
 
-
-@Client.on_message(filters.video & filters.private)
-async def save_video(client, message):
-if Config.UPDATES_CHANNEL:
+@Client.on_message(filters.command("/softmux"))
+async def softmux(bot, message, cb=False):
+    if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
         return
+    me = await bot.get_me()
+
     chat_id = message.from_user.id
     start_time = time.time()
     downloading = await client.send_message(chat_id, 'Downloading your File!')
@@ -164,12 +166,13 @@ if Config.UPDATES_CHANNEL:
             )
 
 
-@Client.on_message(filters.text & filters.regex('^http'))
-async def save_url(client, message):
-if Config.UPDATES_CHANNEL:
+@Client.on_message(filters.command("/softmux"))
+async def softmux(bot, message, cb=False):
+    if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
         return
+    me = await bot.get_me()
     chat_id = message.from_user.id
     save_filename = None
 
