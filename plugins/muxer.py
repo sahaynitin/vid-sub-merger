@@ -102,7 +102,7 @@ async def hardmux(bot, message, cb=False):
     
     start_time = time.time()
     try:
-        await client.send_video(
+        await bot.send_video(
                 chat_id, 
                 progress = progress_bar, 
                 progress_args = (
@@ -117,7 +117,7 @@ async def hardmux(bot, message, cb=False):
         await sent_msg.edit(text)
     except Exception as e:
         print(e)
-        await client.send_message(chat_id, 'An error occured while uploading the file!\nCheck logs for details of the error!')
+        await bot.send_message(chat_id, 'An error occured while uploading the file!\nCheck logs for details of the error!')
     
     path = Config.DOWNLOAD_DIR+'/'
     os.remove(path+og_sub_filename)
