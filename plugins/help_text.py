@@ -29,19 +29,19 @@ async def help(bot, message, cb=False):
         InlineKeyboardButton(f'🏠 HOME', callback_data='back'),
         InlineKeyboardButton(f'ABOUT 👨', callback_data='about')
         ],[
-        InlineKeyboardButton(f'📦 SOURCE', url='https://github.com/AsmSafone/MegaDL-Bot'),
+        InlineKeyboardButton(f'📦 SOURCE', url='https://t.me/tellybots_digital'),
         InlineKeyboardButton(f'CLOSE 🔐', callback_data='close')
         ]]
     reply_markup = InlineKeyboardMarkup(button)
     if cb:
         await message.message.edit(
-            text=TEXT.HELP_USER.format(bot_name=me.mention(style='md')),
+            text=Script.HELP_USER.format(bot_name=me.mention(style='md')),
             disable_web_page_preview=True,
             reply_markup=reply_markup
         )
     else:
         await message.reply_text(
-            text=TEXT.HELP_USER.format(bot_name=me.mention(style='md')),
+            text=Script.HELP_USER.format(bot_name=me.mention(style='md')),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             quote=True
@@ -67,7 +67,7 @@ async def start(bot, message, cb=False):
     reply_markup = InlineKeyboardMarkup(button)
     if cb:
         await message.message.edit(
-            text=TEXT.START_TEXT.format(user_mention=message.from_user.mention, bot_name=me.mention(style='md'), bot_owner=owner.mention(style="md")), 
+            text=Script.START_TEXT.format(user_mention=message.from_user.mention, bot_name=me.mention(style='md'), bot_owner=owner.mention(style="md")), 
             disable_web_page_preview=True,
             reply_markup=reply_markup
         )
@@ -97,13 +97,13 @@ async def about(bot, message, cb=False):
     reply_markup = InlineKeyboardMarkup(button)
     if cb:
         await message.message.edit(
-            text=TEXT.ABOUT.format(bot_name=me.mention(style='md')),
+            text=Script.ABOUT.format(bot_name=me.mention(style='md')),
             disable_web_page_preview=True,
             reply_markup=reply_markup
         )
     else:
         await message.reply_text(
-            text=TEXT.ABOUT.format(bot_name=me.mention(style='md')),
+            text=Script.ABOUT.format(bot_name=me.mention(style='md')),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             quote=True
