@@ -5,7 +5,8 @@ from helper_func.mux import softmux_vid, hardmux_vid
 from config import Config
 import time
 import os
-
+from plugins.forcesub import handle_force_subscribe
+from pyrogram.errors import FloodWait, UserNotParticipant
 db = Db()
 
 @Client.on_message(filters.command("/softmux"))
@@ -69,7 +70,7 @@ async def softmux(bot, message, cb=False):
 
 
 @Client.on_message(filters.command("/hardmux"))
-async def softmux(bot, message, cb=False):
+async def hardmux(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
