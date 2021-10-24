@@ -5,7 +5,7 @@ from config import Config
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.forcesub import handle_force_subscribe
 from script import Script
-@Client.on_message(pyrogram.filters.command("help"))
+@Client.on_message(filters.command("help") & filters.private & filters.incoming)
 async def help(bot, message, cb=False):
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
