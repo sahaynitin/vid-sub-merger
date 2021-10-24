@@ -73,7 +73,7 @@ async def start(bot, message, cb=False):
         )
     else:
         await message.reply_text(
-            text=TEXT.START_TEXT.format(user_mention=message.from_user.mention, bot_name=me.mention(style='md'), bot_owner=owner.mention(style="md")), 
+            text=Script.START_TEXT.format(user_mention=message.from_user.mention, bot_name=me.mention(style='md'), bot_owner=owner.mention(style="md")), 
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             quote=True
