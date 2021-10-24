@@ -12,7 +12,7 @@ import os
 import pyrogram
 from config import Config
 logging.getLogger('pyrogram').setLevel(logging.WARNING)
-
+from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from plugins.forcesub import handle_force_subscribe
 from script import Script
