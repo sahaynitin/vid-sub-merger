@@ -8,8 +8,8 @@ import os
 
 db = Db()
 
-@Client.on_message(filters.command("softmux"))
-async def Softmux(bot, message, cb=False):
+@Client.on_message(filters.command('softmux') & filters.private)
+async def softmux():
     if Config.UPDATES_CHANNEL:
       fsub = await handle_force_subscribe(bot, message)
       if fsub == 400:
